@@ -8,7 +8,7 @@ export function Landing() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) navigate("/dashboard", { replace: true });
+    if (user) navigate("/demo", { replace: true });
   }, [user, navigate]);
 
   return (

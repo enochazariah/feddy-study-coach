@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GoogleSignInButton } from "../auth/GoogleSignInButton";
 import { useAuth } from "../auth/AuthContext";
 import "../styles/login.css";
@@ -7,7 +7,6 @@ import "../styles/login.css";
 export function Login() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const destination = "/demo";
 
