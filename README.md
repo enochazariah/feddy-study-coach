@@ -34,7 +34,7 @@ they are not selected in the browser.
 ### Prerequisites
 
 - Python 3.13: backend tests were verified using Python 3.13.7.
-- Node.js and npm compatible with the Vite 5 frontend.
+- Node.js 20.x or 22 and newer, with npm, for the Vite 6 / React Router 7 frontend. Locally tested with Node.js 24.19.0.
 - Git.
 - Authorized access to the configured Amazon Bedrock model.
 - A Google OAuth web client.
