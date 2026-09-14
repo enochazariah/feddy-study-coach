@@ -1,0 +1,49 @@
+@import "./hub-panels.css";
+.quiz-config { display: grid; grid-template-columns: 1.5fr 0.7fr 1fr auto; align-items: end; gap: 0.8rem; margin: 1.6rem 0 2rem; }
+.quiz-config label { display: grid; gap: 0.4rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; }
+.quiz-list { display: grid; gap: 1rem; }
+.quiz-card { padding: 1.25rem; background: var(--paper); border-radius: 8px; }
+.quiz-number { color: var(--ochre); font-size: 0.75rem; font-weight: 700; }
+.quiz-card h3 { margin: 0.5rem 0 1rem; font-size: 1.05rem; }
+.quiz-option { display: block; padding: 0.6rem 0.7rem; margin-top: 0.4rem; background: var(--paper-raised); border-radius: 5px; font-size: 0.9rem; }
+.quiz-option__text { display: inline; }
+.quiz-option__text > :first-child { display: inline; }
+.quiz-option input { margin-right: 0.6rem; accent-color: var(--sage-deep); }
+.quiz-correct, .quiz-review { margin: 0.8rem 0 0; font-size: 0.83rem; }
+.quiz-correct { color: var(--sage-deep); }
+.quiz-review { color: #8b3b31; }
+.quiz-feedback {
+	max-width: 70ch;
+	margin-top: 0.9rem;
+	padding: 0.9rem 1rem;
+	color: var(--ink);
+	background: var(--paper-raised);
+	border: 1px solid var(--rule);
+	border-radius: 6px;
+	line-height: 1.65;
+}
+.quiz-feedback h4 { margin: 0 0 0.55rem; color: var(--ink); font-size: 0.95rem; }
+.quiz-feedback__markdown { min-width: 0; overflow-wrap: anywhere; }
+.quiz-feedback__markdown p { margin: 0 0 0.9rem; }
+.quiz-feedback__markdown > :last-child { margin-bottom: 0; }
+.quiz-feedback__markdown :is(h1, h2, h3, h4) {
+	margin: 1.1rem 0 0.55rem;
+	color: var(--ink);
+	line-height: 1.25;
+}
+.quiz-feedback__markdown :is(h1, h2, h3, h4):first-child { margin-top: 0; }
+.quiz-feedback__markdown :is(ul, ol) { margin: 0 0 0.9rem; padding-left: 1.35rem; }
+.quiz-feedback__markdown li + li { margin-top: 0.35rem; }
+.quiz-feedback__markdown hr { margin: 1.25rem 0; border: 0; border-top: 1px solid var(--rule); }
+.quiz-feedback__markdown code { overflow-wrap: anywhere; }
+.quiz-feedback__markdown pre {
+	max-width: 100%;
+	overflow-x: auto;
+	padding: 0.75rem;
+	background: rgba(22, 35, 58, 0.08);
+	border-radius: 4px;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+.quiz-feedback__markdown pre code { white-space: pre-wrap; }
+@media (max-width: 700px) { .quiz-config { grid-template-columns: 1fr 1fr; } .quiz-config button { grid-column: span 2; } }

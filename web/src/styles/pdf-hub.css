@@ -1,0 +1,152 @@
+.pdf-hub {
+  padding: 1.5rem;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(22, 35, 58, 0.08);
+}
+
+.pdf-hub__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pdf-hub__heading h2 { font-size: 1.45rem; }
+.pdf-hub__eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--ochre);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pdf-hub__icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: var(--paper-raised);
+  background: var(--sage-deep);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.pdf-hub__description { margin: 1rem 0 1.25rem; font-size: 0.9rem; }
+.pdf-hub__dropzone {
+  display: flex;
+  min-height: 190px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1.25rem;
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 2px dashed var(--rule);
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.pdf-hub__dropzone:hover,
+.pdf-hub__dropzone--active {
+  background: #e5e9df;
+  border-color: var(--sage);
+}
+
+.pdf-hub__input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.pdf-hub__upload-mark { color: var(--sage-deep); font-size: 2rem; font-weight: 600; }
+.pdf-hub__dropzone strong { font-size: 0.95rem; }
+.pdf-hub__dropzone span { color: var(--text-muted); font-size: 0.82rem; }
+.pdf-hub__dropzone small { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.72rem; }
+.pdf-hub__error { margin: 0.75rem 0 0; color: #7a3029; font-size: 0.82rem; }
+.pdf-hub__markdown p { margin: 0 0 0.75rem; }
+.pdf-hub__markdown :is(ul, ol) { margin: 0 0 0.75rem; padding-left: 1.25rem; }
+.pdf-hub__markdown code { padding: 0.08rem 0.25rem; background: var(--paper); border-radius: 3px; }
+.pdf-hub__lesson-reading {
+  max-width: 70ch;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.pdf-hub__lesson-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+.pdf-hub__lesson-header h4 { margin: 0; font-size: 1.25rem; }
+.pdf-hub__lesson-label {
+  margin: 0 0 0.2rem;
+  color: var(--sage-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pdf-hub__lesson-reading > section { margin-top: 1.25rem; }
+.pdf-hub__lesson-reading h5 {
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.pdf-hub__lesson-reading .pdf-hub__markdown { max-width: 70ch; }
+.pdf-hub__lesson-reading .pdf-hub__markdown > :last-child { margin-bottom: 0; }
+.pdf-hub__questions {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+.pdf-hub__questions summary {
+  color: var(--sage-deep);
+  font-weight: 700;
+  cursor: pointer;
+}
+.pdf-hub__questions ul { margin-bottom: 0; }
+.pdf-hub__answer-panel {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+.pdf-hub__answer-panel label { font-weight: 700; }
+.pdf-hub__answer-panel textarea { width: 100%; min-height: 9rem; box-sizing: border-box; resize: vertical; }
+.pdf-hub__answer-actions { display: flex; justify-content: flex-start; }
+.pdf-hub__feedback {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--sage);
+}
+.pdf-hub__feedback h5 { font-size: 1.05rem; }
+
+@media (max-width: 600px) {
+  .pdf-hub__lesson-reading { padding: 1rem; font-size: 1rem; }
+  .pdf-hub__lesson-header { flex-direction: column; gap: 0.35rem; }
+}
+
+.pdf-hub__file {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: var(--paper);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.pdf-hub__file-type { color: var(--sage-deep); font-size: 0.68rem; font-weight: 700; }
+.pdf-hub__file-name { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pdf-hub__ready { color: var(--sage-deep); font-size: 0.72rem; font-weight: 700; }

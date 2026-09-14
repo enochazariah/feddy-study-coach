@@ -1,0 +1,102 @@
+:root {
+  --ink: #16233a;
+  --ink-soft: #2c3c56;
+  --paper: #eceae2;
+  --paper-raised: #f6f5f0;
+  --rule: #cfccc0;
+  --text-muted: #5b6270;
+  --sage: #3f6e5f;
+  --sage-deep: #2c4f44;
+  --ochre: #b1802f;
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+}
+
+p { line-height: 1.55; color: var(--text-muted); margin: 0 0 1rem; max-width: 62ch; }
+
+a { color: inherit; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--sage-deep);
+  color: var(--paper-raised);
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover { background: var(--sage); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.demo-cta { margin-top: 1rem; font-size: 1rem; padding: 0.85rem 1.5rem; }
+.demo-cta span { margin-left: 0.4rem; font-size: 1.15rem; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+}
+.btn-ghost:hover { border-color: var(--ink-soft); }
+
+.shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.auth-loading {
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  padding: 2rem;
+}

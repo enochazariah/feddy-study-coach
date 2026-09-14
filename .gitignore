@@ -1,0 +1,39 @@
+backend/.env
+web/.env
+node_modules/
+**/node_modules/
+__pycache__/
+*.py[cod]
+backend/.venv/
+web/dist/
+# Local environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+!.env.sample
+.aws/
+*.pem
+*.key
+
+# Local databases and journal files
+*.sqlite3
+*.sqlite3-*
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# User uploads and local backups
+media/
+uploads/
+*.bak
+*.log
+
+# Development caches
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.tsbuildinfo
