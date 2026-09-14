@@ -2,7 +2,7 @@ from types import SimpleNamespace
 from unittest import TestCase
 from unittest.mock import patch
 
-from tutoring.document_agent import analyze_document
+from tutoring.document_agent import MAX_SOURCE_JSON_CHARS, analyze_document
 from tutoring.document_schemas import DocumentAnalysisOutput
 
 
@@ -58,12 +58,15 @@ class DocumentAgentTests(TestCase):
         self.model_factory.assert_not_called()
         self.agent_factory.assert_not_called()
 
-    def test_oversized_document_is_rejected_before_model_creation(self):
+    def test_oversized_document_is_split_into_bounded_batches(self):
         self.document.chunks[0]["text"] = "x" * 32001
-        with self.assertRaisesRegex(ValueError, "batching is required"):
-            analyze_document(self.document, user_id="owner")
-        self.model_factory.assert_not_called()
-        self.agent_factory.assert_not_called()
+        result = analyze_document(self.document, user_id="owner")
+
+        self.assertIn("Analyzed all stored text in", result["overview"])
+        self.assertGreater(self.model_factory.call_count, 1)
+        for call in self.agent_factory.return_value.call_args_list:
+            source_json = call.args[0].split("\n", 1)[1]
+            self.assertLessEqual(len(source_json), MAX_SOURCE_JSON_CHARS)
 
     def test_invented_source_is_rejected(self):
         self.agent_factory.return_value.return_value.structured_output = (

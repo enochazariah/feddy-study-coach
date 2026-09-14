@@ -1,4 +1,5 @@
 import jwt
+from django.urls import reverse
 from django.test import TestCase
 from rest_framework.test import APIClient
 
@@ -37,12 +38,12 @@ class AuthenticatedEndpointTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["user"]["email"], "student@example.com")
 
-    def test_subjects_requires_authentication(self):
-        response = self.client.get("/api/subjects")
+    def test_active_learning_requires_authentication(self):
+        response = self.client.post(reverse("active_learning_generate"), {})
         self.assertEqual(response.status_code, 403)
 
     def test_tutor_chat_requires_authentication(self):
         response = self.client.post(
-            "/api/tutor/chat", {"message": "hi", "mode": "standard"}, format="json"
+            reverse("chat_with_tutor"), {"message": "hi", "mode": "standard"}, format="json"
         )
         self.assertEqual(response.status_code, 403)

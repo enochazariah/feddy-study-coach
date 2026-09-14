@@ -44,7 +44,7 @@ class StrandsRuntimeTests(SimpleTestCase):
         model_mock.assert_called_once()
         kwargs = model_mock.call_args.kwargs
         assert kwargs["boto_session"] is fake_session
-        assert kwargs["region_name"] == "eu-west-1"
+        assert "region_name" not in kwargs
         assert kwargs["model_id"] == "custom.model.v1"
         assert kwargs["max_tokens"] == 512
         assert kwargs["temperature"] == 0.35
